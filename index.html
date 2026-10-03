@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Undercover Community — правила, термины и роли игрового community-проекта. Независимая фанатская инициатива." />
+  <title>Undercover Community — Правила и термины</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Фон: aurora + шум + лепестки -->
+  <div class="bg-aurora" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+    <span class="blob blob-4"></span>
+  </div>
+  <div class="bg-noise" aria-hidden="true"></div>
+  <div class="petals" aria-hidden="true">
+    <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+    <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+    <span class="petal"></span><span class="petal"></span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <div class="logo-mark">U</div>
+      <span class="logo-text">UNDER<em>COVER</em></span>
+    </div>
+
+    <nav class="nav">
+      <a href="#terms" data-i18n="nav.terms">Термины</a>
+      <a href="#roles" data-i18n="nav.roles">Роли</a>
+      <a href="#rules" data-i18n="nav.rules">Правила</a>
+      <a href="#legal" data-i18n="nav.legal">Правовое</a>
+    </nav>
+
+    <!-- Discord справа в хедере -->
+    <a href="https://discord.gg/suWJGDwftX" target="_blank" rel="noopener" class="header-discord">
+      <span class="discord-dot"></span>
+      <span data-i18n="header.discord">DISCORD</span>
+      <span class="discord-online"><b id="discordCount">1 248</b></span>
+    </a>
+
+    <div class="lang-switch" id="langSwitch">
+      <button class="lang-btn active" data-lang="ru">RU</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <!-- БЕГУЩАЯ СТРОКА -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span data-i18n="ticker.1">◆ ПРАВИЛА UNDERCOVER COMMUNITY</span>
+      <span data-i18n="ticker.2">◆ УВАЖАЙ ДРУГИХ ИГРОКОВ</span>
+      <span data-i18n="ticker.3">◆ БЕЗ ЧИТОВ И БАГОУЗА</span>
+      <span data-i18n="ticker.4">◆ ИГРАЙ ЧЕСТНО</span>
+      <span data-i18n="ticker.5">◆ DISCORD.GG/SUWJGDWFTX</span>
+      <span data-i18n="ticker.1">◆ ПРАВИЛА UNDERCOVER COMMUNITY</span>
+      <span data-i18n="ticker.2">◆ УВАЖАЙ ДРУГИХ ИГРОКОВ</span>
+      <span data-i18n="ticker.3">◆ БЕЗ ЧИТОВ И БАГОУЗА</span>
+      <span data-i18n="ticker.4">◆ ИГРАЙ ЧЕСТНО</span>
+      <span data-i18n="ticker.5">◆ DISCORD.GG/SUWJGDWFTX</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <main class="hero">
+    <div class="hero-badge" data-i18n="hero.badge">ПРАВИЛА UNDERCOVER COMMUNITY</div>
+
+    <h1 class="hero-title">
+      <span data-i18n="hero.line1">ПРАВИЛА</span><br />
+      <span class="grad-text" data-i18n="hero.line2">И ТЕРМИНЫ</span>
+    </h1>
+    <p class="hero-desc" data-i18n="hero.desc">
+      Перед началом игры обязательно ознакомься с терминологией проекта и правилами
+      сообщества. Незнание правил не освобождает от ответственности. За нарушения —
+      бан без предупреждения.
+    </p>
+
+    <div class="hero-actions">
+      <a href="https://discord.gg/suWJGDwftX" target="_blank" rel="noopener" class="btn-discord">
+        <span class="btn-ico">💬</span> <span data-i18n="hero.discord">ЗАЙТИ В DISCORD</span>
+      </a>
+      <a href="#rules" class="btn-ghost">
+        <span data-i18n="hero.readRules">ЧИТАТЬ ПРАВИЛА</span>
+      </a>
+    </div>
+
+    <!-- 3D КУБ -->
+    <div class="cube-stage">
+      <div class="cube" id="cube">
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face right"></div>
+        <div class="face left"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="cube-glow"></div>
+    </div>
+    <p class="cube-hint" data-i18n="hero.cubeHint">Крути куб мышкой · свайп на мобиле</p>
+  </main>
+
+  <!-- ТЕРМИНЫ -->
+  <section class="section" id="terms">
+    <h2 class="section-title">
+      <span data-i18n="terms.title1">ИГРОВЫЕ</span>
+      <span class="grad-text" data-i18n="terms.title2">ТЕРМИНЫ</span>
+    </h2>
+    <p class="section-sub" data-i18n="terms.sub">
+      Сленг, который нужно знать, чтобы понимать других игроков и админов.
+    </p>
+
+    <div class="terms-grid">
+      <article class="term">
+        <b data-i18n="term.rp.b">РП / RP</b>
+        <p data-i18n="term.rp">Ролевая игра — отыгрывание роли своего персонажа. В РП ты ведёшь себя так, как вёл бы себя твой герой в реальной жизни.</p>
+      </article>
+      <article class="term">
+        <b data-i18n="term.dm.b">ДМ / DM</b>
+        <p data-i18n="term.dm">Deathmatch — убийство игрока без причины и без РП-повода. Строго запрещено.</p>
+      </article>
+      <article class="term">
+        <b data-i18n="term.tk.b">ТК / TK</b>
+        <p data-i18n="term.tk">Teamkill — убийство союзника или члена своей фракции без причины.</p>
+      </article>
+      <article class="term">
+        <b data-i18n="term.rk.b">РК / RK</b>
+        <p data-i18n="term.rk">Revenge Kill — месть после смерти. Ты вернулся и убил того, кто тебя убил. Запрещено.</p>
+      </article>
+      <article class="term">
+        <b data-i18n="term.mg.b">МГ / MG</b>
+        <p data-i18n="term.mg">Meta Gaming — использование информации из реальной жизни (Discord, стрим, чат) в игре, которой персонаж не знает.</p>
+      </article>
+      <article class="term">
+        <b data-i18n="term.pg.b">ПГ / PG</b>
+        <p data-i18n="term.pg">Power Gaming — навязывание своей игры другим, действия без шанса на ответ, суперспособности персонажа.</p>
+      </article>
+      <article class="term">
+        <b data-i18n="term.fg.b">ФГ / FRP</b>
+        <p data-i18n="term.fg">Fear RP / Fail RP — отсутствие страха за жизнь персонажа. Когда на тебя наставили оружие — ты обязан бояться.</p>
+      </article>
+      <article class="term">
+        <b data-i18n="term.nrp.b">НРП / NRP</b>
+        <p data-i18n="term.nrp">NonRP — поведение вне роли: писать в чат «лол», «кек», обсуждать реальную жизнь, оскорблять по OOC.</p>
+      </article>
+      <article class="term">
+        <b data-i18n="term.ooc.b">OOC / IC</b>
+        <p data-i18n="term.ooc">OOC — вне роли (реальный ты). IC — в роли (твой персонаж). Не путай.</p>
+      </article>
+      <article class="term">
+        <b data-i18n="term.afk.b">АФК / AFK</b>
+        <p data-i18n="term.afk">AFK — отшёл от клавиатуры. Долгое АФК на важных постах = наказание.</p>
+      </article>
+      <article class="term">
+        <b data-i18n="term.bh.b">БХ / BugUse</b>
+        <p data-i18n="term.bh">Баг-юз — использование багов игры для получения преимущества. Бан навсегда.</p>
+      </article>
+      <article class="term">
+        <b data-i18n="term.sk.b">СК / SK</b>
+        <p data-i18n="term.sk">Spawn Kill — убийство на респавне. Запрещено.</p>
+      </article>
+      <article class="term">
+        <b data-i18n="term.gm.b">ГМ / GM</b>
+        <p data-i18n="term.gm">God Mode — режим бессмертия. Игрокам запрещён, только для админов при работе.</p>
+      </article>
+      <article class="term">
+        <b data-i18n="term.cheats.b">Читы / Cheats</b>
+        <p data-i18n="term.cheats">Любые сторонние программы, макросы, авто-кликеры. Бан перманентно.</p>
+      </article>
+      <article class="term">
+        <b data-i18n="term.scam.b">Скам / Scam</b>
+        <p data-i18n="term.scam">Мошенничество в сделках, кидок на деньги или имущество. Бан без разбора.</p>
+      </article>
+      <article class="term">
+        <b data-i18n="term.twink.b">Твинк / Twink</b>
+        <p data-i18n="term.twink">Второй аккаунт для обхода наказания. Бан на все аккаунты.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- РОЛИ -->
+  <section class="section" id="roles">
+    <h2 class="section-title">
+      <span data-i18n="roles.title1">РОЛИ НА</span>
+      <span class="grad-text" data-i18n="roles.title2">ПРОЕКТЕ</span>
+    </h2>
+    <p class="section-sub" data-i18n="roles.sub">Кто есть кто и к кому обращаться.</p>
+
+    <div class="roles-grid">
+      <article class="role role-owner">
+        <div class="role-badge">👑</div>
+        <h3 data-i18n="role.owner.title">Владелец</h3>
+        <p data-i18n="role.owner.desc">Основатель и хозяин проекта. Принимает финальные решения, имеет высший приоритет. К нему обращаются только по действительно серьёзным вопросам.</p>
+      </article>
+
+      <article class="role role-admin">
+        <div class="role-badge">🛡</div>
+        <h3 data-i18n="role.admin.title">Администратор</h3>
+        <p data-i18n="role.admin.desc">Следит за порядком, рассматривает жалобы, выдаёт наказания, решает спорные ситуации между игроками и фракциями.</p>
+      </article>
+
+      <article class="role role-moder">
+        <div class="role-badge">⚔</div>
+        <h3 data-i18n="role.moder.title">Модератор</h3>
+        <p data-i18n="role.moder.desc">Следит за чатом и голосом, выдаёт мут/кик, помогает с простыми вопросами, эскалирует сложное админам.</p>
+      </article>
+
+      <article class="role role-helper">
+        <div class="role-badge">💡</div>
+        <h3 data-i18n="role.helper.title">Хелпер</h3>
+        <p data-i18n="role.helper.desc">Помогает новичкам разобраться в механике проекта. Не выдаёт наказания, но может подсказать и направить.</p>
+      </article>
+
+      <article class="role role-dev">
+        <div class="role-badge">🛠</div>
+        <h3 data-i18n="role.dev.title">Разработчик</h3>
+        <p data-i18n="role.dev.desc">Пишет код, фиксит баги, добавляет новый контент. По техническим проблемам — к нему.</p>
+      </article>
+
+      <article class="role role-player">
+        <div class="role-badge">🎮</div>
+        <h3 data-i18n="role.player.title">Игрок</h3>
+        <p data-i18n="role.player.desc">Ты. Обязан соблюдать правила проекта, уважать других и отыгрывать роль. Нарушил — получил наказание.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ПРАВИЛА -->
+  <section class="section" id="rules">
+    <h2 class="section-title">
+      <span data-i18n="rules.title1">ОБЩИЕ</span>
+      <span class="grad-text" data-i18n="rules.title2">ПРАВИЛА</span>
+    </h2>
+    <p class="section-sub" data-i18n="rules.sub">Незнание правил не освобождает от ответственности.</p>
+
+    <div class="rules-grid">
+      <article class="rule">
+        <span class="rule-num">01</span>
+        <h3 data-i18n="rule.1.title">Уважение</h3>
+        <p data-i18n="rule.1.desc">Запрещены оскорбления, травля, унижение, переход на личности и токсичное поведение в чате, голосе и Discord.</p>
+      </article>
+
+      <article class="rule">
+        <span class="rule-num">02</span>
+        <h3 data-i18n="rule.2.title">Без расизма и ненависти</h3>
+        <p data-i18n="rule.2.desc">Любые проявления расизма, ксенофобии, дискриминации по полу, религии, национальности и ориентации — перманентный бан.</p>
+      </article>
+
+      <article class="rule">
+        <span class="rule-num">03</span>
+        <h3 data-i18n="rule.3.title">Без читов и софта</h3>
+        <p data-i18n="rule.3.desc">Читы, макросы, авто-кликеры, багоюз — бан навсегда без права на разбан.</p>
+      </article>
+
+      <article class="rule">
+        <span class="rule-num">04</span>
+        <h3 data-i18n="rule.4.title">Без ДМ и ТК</h3>
+        <p data-i18n="rule.4.desc">Убийство игрока или союзника без РП-причины запрещено. Наказание: кик, варн, бан.</p>
+      </article>
+
+      <article class="rule">
+        <span class="rule-num">05</span>
+        <h3 data-i18n="rule.5.title">Без РК</h3>
+        <p data-i18n="rule.5.desc">После смерти нельзя возвращаться и мстить убийце. Сначала — отыгрыш, потом — действия.</p>
+      </article>
+
+      <article class="rule">
+        <span class="rule-num">06</span>
+        <h3 data-i18n="rule.6.title">Без МГ и ПГ</h3>
+        <p data-i18n="rule.6.desc">Использование вне-игровой информации и навязывание игры другим запрещено. Играй честно.</p>
+      </article>
+
+      <article class="rule">
+        <span class="rule-num">07</span>
+        <h3 data-i18n="rule.7.title">Fear RP</h3>
+        <p data-i18n="rule.7.desc">Твой персонаж обязан бояться за свою жизнь. Наставили оружие — подчиняйся, а не беги в атаку.</p>
+      </article>
+
+      <article class="rule">
+        <span class="rule-num">08</span>
+        <h3 data-i18n="rule.8.title">Без рекламы</h3>
+        <p data-i18n="rule.8.desc">Реклама сторонних проектов, серверов, каналов и магазинов без согласования с администрацией запрещена.</p>
+      </article>
+
+      <article class="rule">
+        <span class="rule-num">09</span>
+        <h3 data-i18n="rule.9.title">Без обмана</h3>
+        <p data-i18n="rule.9.desc">Скам, кидок в сделках, обман новичков и мошенничество — блокировка аккаунта и Discord.</p>
+      </article>
+
+      <article class="rule">
+        <span class="rule-num">10</span>
+        <h3 data-i18n="rule.10.title">Соблюдай закон</h3>
+        <p data-i18n="rule.10.desc">Никаких призывов к насилию, терроризму, экстремизму и прочего, что запрещено законом.</p>
+      </article>
+
+      <article class="rule">
+        <span class="rule-num">11</span>
+        <h3 data-i18n="rule.11.title">Слушай администрацию</h3>
+        <p data-i18n="rule.11.desc">Указания админов и модераторов обязательны к исполнению. Спорные ситуации решаются через жалобу в Discord.</p>
+      </article>
+
+      <article class="rule">
+        <span class="rule-num">12</span>
+        <h3 data-i18n="rule.12.title">Без абуза правил</h3>
+        <p data-i18n="rule.12.desc">Попытка обойти наказание через твинки, смену ника или другие уловки — бан навсегда на все аккаунты.</p>
+      </article>
+
+      <article class="rule">
+        <span class="rule-num">13</span>
+        <h3 data-i18n="rule.13.title">Без политики и религии</h3>
+        <p data-i18n="rule.13.desc">Политические и религиозные споры в чате и голосе запрещены. Проект — для игры, а не для митингов.</p>
+      </article>
+
+      <article class="rule">
+        <span class="rule-num">14</span>
+        <h3 data-i18n="rule.14.title">Без NSFW-контента</h3>
+        <p data-i18n="rule.14.desc">Порнография, шок-контент, жестокость в открытом виде — бан без предупреждения.</p>
+      </article>
+
+      <article class="rule">
+        <span class="rule-num">15</span>
+        <h3 data-i18n="rule.15.title">Уважай авторские права</h3>
+        <p data-i18n="rule.15.desc">Запрещено выдавать себя за представителей правообладателей, использовать чужие логотипы и бренды без разрешения.</p>
+      </article>
+
+      <article class="rule">
+        <span class="rule-num">16</span>
+        <h3 data-i18n="rule.16.title">Возраст 16+</h3>
+        <p data-i18n="rule.16.desc">Проект ориентирован на игроков 16 лет и старше. Младшим — только с согласия родителей.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ПРАВОВОЙ БЛОК -->
+  <section class="section" id="legal">
+    <h2 class="section-title">
+      <span data-i18n="legal.title1">ПРАВОВАЯ</span>
+      <span class="grad-text" data-i18n="legal.title2">ИНФОРМАЦИЯ</span>
+    </h2>
+    <p class="section-sub" data-i18n="legal.sub">
+      Мы уважаем чужую интеллектуальную собственность и соблюдаем законодательство.
+    </p>
+
+    <div class="legal-grid">
+      <article class="legal-card">
+        <h3 data-i18n="legal.1.title">Независимая фанатская инициатива</h3>
+        <p data-i18n="legal.1.desc">
+          Undercover Community — независимый игровой community-проект, созданный
+          фанатами для фанатов. Мы не связаны, не аффилированы и не поддерживаемся
+          компаниями, которые создавали, продюсировали, распространяли или владеют
+          правами на какие-либо сторонние произведения, их названия, логотипы,
+          персонажей и иные элементы. Все упоминания носят исключительно
+          информационный и фанатский характер.
+        </p>
+      </article>
+
+      <article class="legal-card">
+        <h3 data-i18n="legal.2.title">Товарные знаки</h3>
+        <p data-i18n="legal.2.desc">
+          Все товарные знаки, логотипы, названия брендов и иные объекты интеллектуальной
+          собственности, упомянутые на сайте, принадлежат их законным правообладателям.
+          Мы не претендуем на эти права и используем упоминания только в информационных
+          и описательных целях.
+        </p>
+      </article>
+
+      <article class="legal-card">
+        <h3 data-i18n="legal.3.title">Соблюдение законов</h3>
+        <p data-i18n="legal.3.desc">
+          Проект обязуется соблюдать действующее законодательство Российской Федерации
+          и стран присутствия участников. Мы запрещаем на своей площадке призывы к
+          насилию, терроризму, экстремизму, разжигание межнациональной и межрелигиозной
+          розни, распространение запрещённой информации и любой контент, нарушающий закон.
+        </p>
+      </article>
+
+      <article class="legal-card">
+        <h3 data-i18n="legal.4.title">Возрастное ограничение</h3>
+        <p data-i18n="legal.4.desc">
+          Контент проекта ориентирован на аудиторию 16+. Если вам меньше 16 лет —
+          использование проекта возможно только с разрешения родителей или законных
+          представителей. Мы не собираем данные несовершеннолетних осознанно.
+        </p>
+      </article>
+
+      <article class="legal-card">
+        <h3 data-i18n="legal.5.title">Обработка данных</h3>
+        <p data-i18n="legal.5.desc">
+          Мы собираем минимально необходимые данные (игровой ник, Discord ID, адрес
+          электронной почты при регистрации) для работы проекта. Данные не передаются
+          третьим лицам, кроме случаев, предусмотренных законом. По запросу — удаляем
+          аккаунт и связанные данные.
+        </p>
+      </article>
+
+      <article class="legal-card">
+        <h3 data-i18n="legal.6.title">Авторские права на контент</h3>
+        <p data-i18n="legal.6.desc">
+          Все материалы, размещённые на сайте (тексты, оформление, код), созданы
+          командой проекта. Если вы считаете, что какой-то материал нарушает ваши
+          права — свяжитесь с нами в Discord, мы оперативно отреагируем и удалим
+          спорный контент.
+        </p>
+      </article>
+
+      <article class="legal-card">
+        <h3 data-i18n="legal.7.title">Отказ от ответственности</h3>
+        <p data-i18n="legal.7.desc">
+          Проект предоставляется «как есть». Мы не несём ответственности за действия
+          игроков, их высказывания и поступки вне игровой площадки. Администрация
+          оставляет за собой право изменять правила и функционал без предварительного
+          уведомления.
+        </p>
+      </article>
+
+      <article class="legal-card">
+        <h3 data-i18n="legal.8.title">Контакты правообладателей</h3>
+        <p data-i18n="legal.8.desc">
+          Если вы — правообладатель и считаете, что мы нарушили ваши права, напишите
+          нам в Discord. Мы готовы к диалогу, оперативно рассмотрим обращение и при
+          необходимости внесём изменения или удалим контент.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- DISCORD CTA -->
+  <section class="discord-cta" id="discord">
+    <div class="discord-inner">
+      <div class="discord-text">
+        <h2>
+          <span data-i18n="cta.title1">ЗАХОДИ В НАШ</span>
+          <span class="grad-text" data-i18n="cta.title2">DISCORD</span>
+        </h2>
+        <p data-i18n="cta.desc">Жалобы, заявки в администрацию, общение, ивенты и анонсы — всё там.</p>
+        <div class="discord-stats">
+          <span class="stat"><b id="discordCount2">1 248</b> <em data-i18n="cta.members">участников</em></span>
+          <span class="stat"><b>24/7</b> <em data-i18n="cta.online">онлайн</em></span>
+        </div>
+      </div>
+      <a href="https://discord.gg/suWJGDwftX" target="_blank" rel="noopener" class="btn-discord btn-discord-big">
+        <span class="btn-ico">💬</span> discord.gg/suWJGDwftX
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="disclaimer">
+        <h4 data-i18n="footer.title">ДИСКЛЕЙМЕР</h4>
+        <p data-i18n="footer.desc">
+          Undercover Community — независимая фанатская инициатива. Проект не связан,
+          не аффилирован и не поддерживается компаниями, создававшими, продюсировавшими
+          или владеющими правами на какие-либо сторонние произведения, их названия,
+          логотипы и персонажей, а также их партнёрами и правообладателями. Все
+          товарные знаки, логотипы и названия принадлежат их законным владельцам и
+          используются исключительно в информационных и описательных целях. Проект
+          соблюдает законодательство РФ и правила Discord.
+        </p>
+      </div>
+      <div class="footer-meta">
+        <span data-i18n="footer.copy">© 2025 Undercover Community</span>
+        <span data-i18n="footer.made">Сделано с ♥ для игроков</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
